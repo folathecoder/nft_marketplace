@@ -74,26 +74,21 @@ export const UserProfile = styled.div`
     height: 30px;
     display: flex;
     align-items: center;
-    padding: 0px 8px;
     border-radius: 10px;
     border: 1px solid var(--color-dec-100);
     cursor: pointer;
+    position: relative;
 
     div:first-child {
-      height: 15px;
-      width: 15px;
-      border-radius: 100%;
-      background-color: green;
+      height: 100%;
+      width: 100%;
+      padding: 0px 8px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-right: 8px;
     }
 
     &:hover {
       transition: var(--transition);
-      color: var(--color-accent-100);
-      opacity: 0.7;
     }
   }
 

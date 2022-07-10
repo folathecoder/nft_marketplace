@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -12,8 +12,7 @@ import {
 } from './HeaderStyles';
 import images from 'public/images/assets';
 import { appMenu } from 'cms/global/appMenu';
-import { ActionButton, CustomToggle } from 'components/global';
-import { type } from 'os';
+import { ActionButton, CustomToggle, SettingsMenu } from 'components/global';
 
 type Props = {
   theme: boolean;
@@ -21,6 +20,9 @@ type Props = {
 };
 
 const Header = ({ theme, setTheme }: Props) => {
+  const [settingsToggle, setSettingsToggle] = useState(false);
+  const [connect, setConnect] = useState(false);
+
   return (
     <HeaderContainer>
       <HeaderInner>
@@ -46,12 +48,12 @@ const Header = ({ theme, setTheme }: Props) => {
           </DesktopMenu>
         </HeaderLeft>
         <HeaderRight>
-          <div className="theme_toggle">
+          {/* <div className="theme_toggle">
             <CustomToggle state={theme} setState={setTheme} />
-          </div>
+          </div> */}
           <div>
-            {true ? (
-              <UserProfile>
+            {connect ? (
+              <UserProfile onClick={() => setConnect(false)}>
                 <div className="wallet_address">
                   <div></div>
                   <div>
@@ -71,11 +73,18 @@ const Header = ({ theme, setTheme }: Props) => {
                   </div>
                 </div>
                 <div className="wallet_options">
-                  <i className="fa-solid fa-ellipsis"></i>
+                  <div onClick={() => setSettingsToggle(!settingsToggle)}>
+                    <i className="fa-solid fa-ellipsis"></i>
+                  </div>
+                  {settingsToggle && (
+                    <SettingsMenu setSettingsToggle={setSettingsToggle} />
+                  )}
                 </div>
               </UserProfile>
             ) : (
-              <ActionButton handleClick={() => {}}>Connect</ActionButton>
+              <ActionButton handleClick={() => setConnect(true)}>
+                Connect
+              </ActionButton>
             )}
           </div>
         </HeaderRight>
