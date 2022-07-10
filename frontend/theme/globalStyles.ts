@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         --color-bg-500: ${(props) => props.theme.bg500};
         --color-accent-100: ${(props) => props.theme.accent100};
         --color-accent-200: ${(props) => props.theme.accent200};
+        --color-accent-400: ${(props) => props.theme.accent400};
         --color-font-100: ${(props) => props.theme.font100};
         --color-font-200: ${(props) => props.theme.font200};
         --color-font-300: ${(props) => props.theme.font300};
@@ -21,8 +22,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         --color-border-100: ${(props) => props.theme.border100};
         --font-pry-100: 'Lato', sans-serif;
         --font-pry-200: 'Poppins', sans-serif;
-        --max-container: 78rem;
-        --max-container-large: 106.25rem;
+        --max-container: 66.5rem;
         --center-container: 0 auto;
         --border-radius: 0.5rem;
         --transition: all 0.5s;
@@ -145,18 +145,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         font-size: 2rem;
         line-height: 2.5rem;
       }
-    }
-    i:hover {
-      background-color: transparent;
-      background-image: transparent;
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    }
-    i:hover {
-      background-color: var(--gradient-bg-100);
-      background-image: var(--gradient-100);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
     }
     
 `;

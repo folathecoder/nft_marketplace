@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { AppContext } from 'context/AppContext';
-import 'theme/fontawesome-pro/css/all.css';
 import { GlobalStyles } from 'theme/globalStyles';
 import type { AppProps } from 'next/app';
-import AppProvider from 'context/AppContext';
 import { ThemeProvider } from 'styled-components';
 import { darkColor, lightColor } from 'theme/colors';
+import AppProvider from 'context/AppContext';
+import 'theme/fontawesome-pro/css/all.css';
+import { Header } from 'components/global';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState(true);
+  const defaultTheme = true;
+  const [theme, setTheme] = useState<boolean>(defaultTheme);
 
   useEffect(() => {
-    const newTheme = localStorage.getItem('theme');
-    setTheme(JSON.parse(newTheme || 'true'));
+    const newTheme = localStorage.getItem('localTheme');
+    setTheme(JSON.parse(newTheme || '{}'));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme));
+    localStorage.setItem('localTheme', JSON.stringify(theme));
   });
 
   return (
     <AppProvider>
       <ThemeProvider theme={theme ? darkColor : lightColor}>
         <GlobalStyles />
+        <Header theme={theme} setTheme={setTheme} />
         <Component {...pageProps} />
       </ThemeProvider>
     </AppProvider>

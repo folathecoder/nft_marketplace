@@ -12,9 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>NFT Marketplace</h1>
-      </main>
+      <main></main>
     </>
   );
 };
