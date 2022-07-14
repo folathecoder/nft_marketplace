@@ -25,3 +25,24 @@ export const settingsMenu = [
     menuIconClass: 'fa-solid fa-arrow-right-from-bracket',
   },
 ];
+
+export const socialsMenu = [
+  {
+    id: 1,
+    socialName: 'Github',
+    socialIconClass: 'fa-brands fa-github',
+    socialLink: 'https://github.com/folathecoder/nft_marketplace',
+  },
+  {
+    id: 2,
+    socialName: 'Twitter',
+    socialIconClass: 'fa-brands fa-twitter',
+    socialLink: 'https://twitter.com/folathecoder',
+  },
+  {
+    id: 3,
+    socialName: 'LinkedIn',
+    socialIconClass: 'fa-brands fa-linkedin-in',
+    socialLink: 'https://www.linkedin.com/in/akinloye-folarin',
+  },
+];

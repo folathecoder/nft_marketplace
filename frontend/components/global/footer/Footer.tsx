@@ -1,6 +1,7 @@
 import React from 'react';
 import { FooterInner, FooterContainer } from './FooterStyles';
 import { appName } from 'cms/global/appInformation';
+import { socialsMenu } from 'cms/global/appMenu';
 
 const Footer = () => {
   const date = new Date().getFullYear();
@@ -14,15 +15,16 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <a href="http://" target="_blank" rel="noreferrer">
-            <i className="fa-brands fa-github"></i>
-          </a>
-          <a href="http://" target="_blank" rel="noreferrer">
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a href="http://" target="_blank" rel="noreferrer">
-            <i className="fa-brands fa-linkedin-in"></i>
-          </a>
+          {socialsMenu.map((item) => (
+            <a
+              href={item.socialLink}
+              target="_blank"
+              rel="noreferrer"
+              key={item.id}
+            >
+              <i className={item.socialIconClass}></i>
+            </a>
+          ))}
         </div>
       </FooterInner>
     </FooterContainer>
