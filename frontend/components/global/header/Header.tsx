@@ -53,7 +53,7 @@ const Header = ({ theme, setTheme }: Props) => {
           </div> */}
           <div>
             {connect ? (
-              <UserProfile onClick={() => setConnect(false)}>
+              <UserProfile>
                 <div className="wallet_address">
                   <div></div>
                   <div>

@@ -100,6 +100,9 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         min-height: 100vh;
         max-width: 100vw;
     }
+    main {
+      min-height: 100vh;
+    }
     a {
       text-decoration: none;
       font-size: 1rem;

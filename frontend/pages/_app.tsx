@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { darkColor, lightColor } from 'theme/colors';
 import AppProvider from 'context/AppContext';
 import 'theme/fontawesome-pro/css/all.css';
-import { Header } from 'components/global';
+import { Header, Footer } from 'components/global';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const defaultTheme = true;
@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GlobalStyles />
         <Header theme={theme} setTheme={setTheme} />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </AppProvider>
   );
