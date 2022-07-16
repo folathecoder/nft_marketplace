@@ -3,7 +3,7 @@ import { QUERIES } from 'theme/mediaQueries';
 
 export const FooterContainer = styled.footer`
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   border-top: 1px solid var(--color-dec-100);
 `;
 

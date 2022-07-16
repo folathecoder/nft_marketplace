@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components';
+import { QUERIES } from 'theme/mediaQueries';
 
-type Props = {};
+type Props = {
+  connect?: boolean;
+};
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   border-bottom: 1px solid var(--color-dec-100);
 `;
 
@@ -25,7 +28,7 @@ export const HeaderInner = styled.div`
 
 export const HeaderLeft = styled.div``;
 
-export const HeaderRight = styled.div`
+export const HeaderRight = styled.div<Props>`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -35,6 +38,23 @@ export const HeaderRight = styled.div`
 
     div {
       transform: translateY(2px);
+    }
+  }
+
+  .wallet_image {
+    width: 20px;
+  }
+
+  .mobile-menu_container {
+    margin-left: 20px;
+
+    button {
+      color: var(--color-font-100);
+      font-size: 25px;
+    }
+
+    @media ${QUERIES.tabletMini} {
+      display: none;
     }
   }
 `;
@@ -51,15 +71,20 @@ export const DesktopMenu = styled.nav`
   height: 40px;
   display: flex;
   align-items: center;
+  display: none;
 
   a {
     margin-right: 20px;
+  }
+
+  @media ${QUERIES.tabletMini} {
+    display: flex;
   }
 `;
 
 export const UserProfile = styled.div`
   height: 30px;
-  display: flex;
+  display: none;
   align-items: center;
   font-size: 14px;
 
@@ -69,7 +94,6 @@ export const UserProfile = styled.div`
 
   .wallet_options {
     display: flex;
-    margin-right: 20px;
     background-color: var(--color-bg-200);
     height: 30px;
     display: flex;
@@ -130,6 +154,76 @@ export const UserProfile = styled.div`
 
     div:nth-child(2) {
       margin-right: 8px;
+    }
+
+    div:last-child {
+      border: 1px solid var(--color-dec-100);
+      height: 30px;
+      display: flex;
+      align-items: center;
+      padding: 0px 8px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+      background-color: opacity(var(--color-bg-200), 0.1);
+    }
+  }
+
+  @media screen and (min-width: 456px) {
+    display: flex;
+  }
+`;
+
+export const UserProfileMini = styled.div`
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  @media screen and (min-width: 456px) {
+    display: none;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .wallet_options {
+    display: flex;
+    background-color: var(--color-bg-200);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--color-dec-100);
+    cursor: pointer;
+    position: relative;
+
+    div:first-child {
+      height: 100%;
+      width: 100%;
+      padding: 0px 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      transition: var(--transition);
+    }
+  }
+
+  .wallet_address {
+    display: flex;
+    margin-right: 20px;
+    background-color: var(--color-bg-200);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+
+    span {
+      opacity: 0.5;
+      margin-left: 2px;
+      padding-top: 2px;
     }
 
     div:last-child {

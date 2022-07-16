@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import 'theme/fontawesome-pro/css/all.css';
 import { GlobalStyles } from 'theme/globalStyles';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { darkColor, lightColor } from 'theme/colors';
 import AppProvider from 'context/AppContext';
-import 'theme/fontawesome-pro/css/all.css';
 import { Header, Footer } from 'components/global';
 
 function MyApp({ Component, pageProps }: AppProps) {

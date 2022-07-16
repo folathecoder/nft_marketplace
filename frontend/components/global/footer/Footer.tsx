@@ -2,6 +2,7 @@ import React from 'react';
 import { FooterInner, FooterContainer } from './FooterStyles';
 import { appName } from 'cms/global/appInformation';
 import { socialsMenu } from 'cms/global/appMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
   const date = new Date().getFullYear();

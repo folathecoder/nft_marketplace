@@ -78,6 +78,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         scrollbar-width: thin;
       }
     }
+
     @media (prefers-reduced-motion: reduce) {
     html:focus-within {
       scroll-behavior: auto;
@@ -90,6 +91,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
           transition-duration: 0.01ms !important;
       }
     }
+
     body {
         font-family: var(--font-pry-100);
         font-weight: 500;
@@ -100,9 +102,17 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         min-height: 100vh;
         max-width: 100vw;
     }
+
     main {
       min-height: 100vh;
     }
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
     a {
       text-decoration: none;
       font-size: 1rem;
@@ -114,12 +124,14 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         color: var(--color-accent-100);
       }
     }
+
     p {
       color: var(--color-font-200);
       font-size: 1rem;
       line-height: 1.5rem;
       font-weight: 400;
     }
+
     h1 {
       color: var(--color-font-100);
       font-size: 2.5rem;
@@ -135,6 +147,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         line-height: 4.5rem;
       }
     }
+
     h2 {
       color: var(--color-font-100);
       font-size: 1.5rem;
