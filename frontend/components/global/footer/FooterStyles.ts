@@ -25,6 +25,7 @@ export const FooterInner = styled.div`
   p {
     font-size: 14px;
     opacity: 0.4;
+    text-align: center;
   }
 
   i {
