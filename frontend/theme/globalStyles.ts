@@ -182,5 +182,5 @@ export const HiddenHeader = styled.h1`
 `;
 
 export const Main = styled.main`
-  margin-top: 40px;
+  /* margin-top: 40px; */
 `;

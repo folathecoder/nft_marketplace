@@ -1,6 +1,6 @@
 export const appMenu = [
   { id: 1, menuTitle: 'Home', menuRoute: '/' },
-  { id: 2, menuTitle: 'Explore', menuRoute: '/' },
+  { id: 2, menuTitle: 'Explore', menuRoute: '/marketplace' },
   { id: 3, menuTitle: 'Create', menuRoute: '/' },
   { id: 4, menuTitle: 'My Assets', menuRoute: '/' },
 ];
