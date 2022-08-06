@@ -5,12 +5,13 @@ type Props = {};
 
 export const MenuContainer = styled.nav`
   width: 100%;
-  background-color: black;
+  background-color: var(--color-bg-100);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 
   @media ${QUERIES.tabletMini} {
     display: none;
@@ -21,6 +22,7 @@ export const MenuNavigation = styled.div`
   height: calc(100vh - 61px);
   display: flex;
   align-items: center;
+  background-color: var(--color-bg-100);
 
   a {
     font-size: 45px;

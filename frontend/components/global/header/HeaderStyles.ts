@@ -7,8 +7,14 @@ type Props = {
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  padding: 10px 20px;
+  padding: var(--container-padding);
   border-bottom: 1px solid var(--color-dec-100);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-bg-100);
 `;
 
 export const HeaderInner = styled.div`
@@ -18,6 +24,7 @@ export const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--color-bg-100);
 
   & > * {
     display: flex;
@@ -72,6 +79,7 @@ export const DesktopMenu = styled.nav`
   display: flex;
   align-items: center;
   display: none;
+  background-color: var(--color-bg-100);
 
   a {
     margin-right: 20px;
@@ -213,7 +221,7 @@ export const UserProfileMini = styled.div`
 
   .wallet_address {
     display: flex;
-    margin-right: 20px;
+    margin-right: 5px;
     background-color: var(--color-bg-200);
     height: 30px;
     display: flex;

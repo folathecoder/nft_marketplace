@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         --font-pry-200: 'Poppins', sans-serif;
         --max-container: 66.5rem;
         --center-container: 0 auto;
+        --container-padding: 10px 20px;
         --border-radius: 0.5rem;
         --transition: all 0.5s;
         --section-space: 0rem 1.2rem;
@@ -34,11 +35,11 @@ export const GlobalStyles = createGlobalStyle<{ theme: ColorTypes }>`
         --color-scroll-bar: ${(props) => props.theme.scrollBar100};
         --gradient-100: linear-gradient(19deg, #B721FF 0%, #21D4FD 1%, #356df3 78%, #356df3 95%);
         --gradient-200: linear-gradient(
-          43deg,
-          #4158d0 0%,
-          #c850c0 46%,
-          #ffcc70 100%
-        );
+        43deg,
+        #4158d0 0%,
+        #d818a1 46%,
+        #ffcc70 100%
+      );
         --gradient-bg-100: #b721ff;
         --gradient-bg-200:#4158d0;
     }
@@ -178,4 +179,8 @@ export const HiddenHeader = styled.h1`
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+`;
+
+export const Main = styled.main`
+  margin-top: 40px;
 `;

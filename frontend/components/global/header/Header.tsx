@@ -127,7 +127,10 @@ const Header = ({ theme, setTheme }: Props) => {
                   </UserProfileMini>
                 </>
               ) : (
-                <ActionButton handleClick={() => setConnect(true)}>
+                <ActionButton
+                  handleClick={() => setConnect(true)}
+                  iconClass={'fa-regular fa-wallet'}
+                >
                   Connect
                 </ActionButton>
               )}
