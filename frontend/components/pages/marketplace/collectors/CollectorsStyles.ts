@@ -1,14 +1,9 @@
 import styled, { css } from 'styled-components';
 import { QUERIES } from 'theme/mediaQueries';
 
-type Props = {
-  connect?: boolean;
-};
-
 export const CollectorContainer = styled.section`
   max-width: var(--max-container);
   margin: var(--center-container);
-  min-height: 400px;
 
   h2 {
     padding: 20px;
