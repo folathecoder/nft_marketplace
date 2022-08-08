@@ -7,6 +7,10 @@ import {
 import NFTCard from 'components/pages/marketplace/NFTCard/NFTCard';
 import { NFTData } from 'cms/marketplace/collectors';
 
+type propTypes = {
+  
+};
+
 const NFTCollection = () => {
   return (
     <CollectorContainer>

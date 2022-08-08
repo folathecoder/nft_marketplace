@@ -1,8 +1,13 @@
 import styled, { css } from 'styled-components';
 import { QUERIES } from 'theme/mediaQueries';
 
-export const Card = styled.div`
-  background-color: var(--color-bg-200);
+type prop = {
+  secondaryVariant?: boolean;
+};
+
+export const Card = styled.div<prop>`
+  background-color: ${(props) =>
+    props.secondaryVariant ? 'hsla(218, 80%, 2%, 1)' : 'hsl(215, 21%, 11%)'};
   border-radius: 8px;
 `;
 

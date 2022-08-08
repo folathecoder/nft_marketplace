@@ -13,7 +13,9 @@ import {
 import MaticIcon from 'public/images/assets/marketplace/matic-token-icon.webp';
 
 type prop = {
+  secondaryVariant?: boolean;
   data: {
+    id: number;
     NFTName: string;
     NFTImage: string;
     NFTCreatorName: string;
@@ -21,11 +23,11 @@ type prop = {
   };
 };
 
-const NFTCard = ({ data }: prop) => {
+const NFTCard = ({ data, secondaryVariant }: prop) => {
   const { NFTName, NFTImage, NFTCreatorImage, NFTCreatorName } = data;
 
   return (
-    <Card>
+    <Card secondaryVariant={secondaryVariant}>
       <CardImage>
         <Image src={NFTImage} alt={NFTName} layout="fill" objectFit="cover" />
       </CardImage>
