@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { QUERIES } from 'theme/mediaQueries';
 
 export const CollectorContainer = styled.section`
   max-width: var(--max-container);
@@ -16,6 +15,8 @@ export const CollectorSlider = styled.div`
   overflow-x: auto;
   margin-top: 20px;
   padding-left: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   & > * {
     display: flex;

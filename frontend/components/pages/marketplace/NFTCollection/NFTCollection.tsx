@@ -6,10 +6,9 @@ import {
 } from 'components/pages/marketplace/NFTCollection/NFTCollectionStyles';
 import NFTCard from 'components/pages/marketplace/NFTCard/NFTCard';
 import { NFTData } from 'cms/marketplace/collectors';
+import NFTFilter from 'components/pages/marketplace/NFTFilter/NFTFilter';
 
-type propTypes = {
-  
-};
+type propTypes = {};
 
 const NFTCollection = () => {
   return (
@@ -17,6 +16,7 @@ const NFTCollection = () => {
       <div>
         <h2>Explore</h2>
       </div>
+      <NFTFilter />
       <Collector>
         <CollectorCards>
           {NFTData.map((item, index) => (
