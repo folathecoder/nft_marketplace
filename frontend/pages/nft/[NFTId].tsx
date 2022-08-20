@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { appName } from 'cms/global/appInformation';
 import { Main } from 'theme/globalStyles';
-import { NFTDetailLayout, RelatedNFT } from 'components/pages/NFTDetail';
+import { NFTDetailLayout } from 'components/pages/NFTDetail';
 
 const NFTDetail: NextPage = () => {
   return (
@@ -15,7 +15,6 @@ const NFTDetail: NextPage = () => {
       </Head>
       <Main>
         <NFTDetailLayout />
-        <RelatedNFT />
       </Main>
     </>
   );
