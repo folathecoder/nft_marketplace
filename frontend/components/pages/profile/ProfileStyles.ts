@@ -56,6 +56,11 @@ export const NFTCardContainer = styled.section`
   margin: 50px auto;
   min-height: 100px;
   padding: 0px 20px;
+
+  h2 {
+    border-bottom: 1px solid var(--color-dec-100);
+    padding-bottom: 10px;
+  }
 `;
 
 export const NFTCards = styled.div`
@@ -70,6 +75,19 @@ export const NFTCards = styled.div`
 
   @media screen and (min-width: 790px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+export const NoNFTContainer = styled.section`
+  width: 100%;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0px 20px;
+
+  p {
+    margin: 10px 0px 20px 0px;
   }
 `;
 
