@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { appName } from 'cms/global/appInformation';
-import { Collectors, NFTCollection } from 'components/pages/marketplace';
-import { Main, HiddenHeader } from 'theme/globalStyles';
+import { Main } from 'theme/globalStyles';
+import { ProfileLayout } from 'components/pages/profile';
 
-const Marketplace: NextPage = () => {
+const Profile: NextPage = () => {
   return (
     <>
       <Head>
@@ -13,12 +13,10 @@ const Marketplace: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <HiddenHeader>Marketplace</HiddenHeader>
-        <Collectors />
-        <NFTCollection />
+        <ProfileLayout />
       </Main>
     </>
   );
 };
 
-export default Marketplace;
+export default Profile;
