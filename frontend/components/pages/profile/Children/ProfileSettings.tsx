@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProfileContext } from 'components/pages/profile/Context/ProfileContext';
 import {
   SettingsContainer,
   Form,
 } from 'components/pages/profile/ProfileStyles';
 
 const ProfileSettings = () => {
+  const { toggleSettings, setToggleSettings } = useContext(ProfileContext);
+
+  const handleClickAway = () => {
+    if (toggleSettings === true) {
+      setToggleSettings(false);
+    }
+  };
+
   return (
-    <SettingsContainer>
+    <SettingsContainer toggleSettings={toggleSettings}>
       <div>
+        <button onClick={() => setToggleSettings(!toggleSettings)}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
         <Form>
           <div className="form_input-heading">Profile picture</div>
           <div className="form_input-container ">

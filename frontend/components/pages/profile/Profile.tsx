@@ -6,15 +6,21 @@ import {
   ProfileInfo,
   ProfileSettings,
 } from 'components/pages/profile';
+import { ProfileProvider } from 'components/pages/profile/Context/ProfileContext';
+import { Main } from 'theme/globalStyles';
 
 const Profile = () => {
   return (
-    <ProfileContainer>
-      <ProfileHeaderSection />
-      <ProfileInfo />
-      <ProfileNFTs />
-      {/* <ProfileSettings /> */}
-    </ProfileContainer>
+    <ProfileProvider>
+      <Main>
+        <ProfileContainer>
+          <ProfileHeaderSection />
+          <ProfileInfo />
+          <ProfileNFTs />
+        </ProfileContainer>
+        <ProfileSettings />
+      </Main>
+    </ProfileProvider>
   );
 };
 

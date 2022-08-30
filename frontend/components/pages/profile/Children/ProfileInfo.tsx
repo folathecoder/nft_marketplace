@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProfileInfoContainer } from 'components/pages/profile/ProfileStyles';
 import MaticIcon from 'public/images/assets/marketplace/matic-token-icon.webp';
+import { ProfileContext } from 'components/pages/profile/Context/ProfileContext';
 
 const ProfileInfo = () => {
+  const { toggleSettings, setToggleSettings } = useContext(ProfileContext);
+
   return (
     <ProfileInfoContainer>
       <div>
@@ -62,7 +65,7 @@ const ProfileInfo = () => {
               <i className="fa-brands fa-telegram"></i>
             </Link>
           </li>
-          <li>
+          <li onClick={() => setToggleSettings(true)}>
             <i className="fa-light fa-pen"></i>
           </li>
         </ul>

@@ -12,9 +12,7 @@ const Profile: NextPage = () => {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main>
-        <ProfileLayout />
-      </Main>
+      <ProfileLayout />
     </>
   );
 };

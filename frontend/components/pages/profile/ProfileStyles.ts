@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import ProfileWallpaper from 'public/images/assets/profile/profile-head-bg.jpg';
 
 type Props = {
-  imgURL: any;
+  imgURL?: any;
+  toggleSettings?: boolean;
 };
 
 export const ProfileContainer = styled.section`
@@ -142,21 +143,43 @@ export const ProfileInfoContainer = styled.section`
 
     i {
       font-size: 20px;
+      cursor: pointer;
     }
   }
 `;
 
-export const SettingsContainer = styled.section`
-  width: 600px;
+export const SettingsContainer = styled.section<Props>`
+  width: 100vw;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--color-bg-200);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  margin-top: -60px;
   padding: 20px;
+  transform: ${(props) =>
+    props.toggleSettings ? 'translateX(0%)' : 'translateX(100%)'};
+  transition: ${(props) =>
+    props.toggleSettings ? 'all 0.3s linear' : 'all 0.3s linear'};
+
+  @media screen and (min-width: 401px) {
+    width: 400px;
+    /* width: 100vw; */
+  }
+
+  & > * {
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 25px;
+      color: var(--color-font-100);
+      cursor: pointer;
+    }
+  }
 
   .form_input-heading {
     margin: 30px 0px;
@@ -180,8 +203,10 @@ export const SettingsContainer = styled.section`
     background-color: hsl(0, 0%, 0%, 0.5);
     color: var(--color-font-200);
 
-    &:active {
-      outline: var(--color-accent-100);
+    &:active,
+    &:hover,
+    &:focus {
+      outline: 1px solid var(--color-accent-100);
     }
   }
 
@@ -190,6 +215,13 @@ export const SettingsContainer = styled.section`
     background-color: transparent;
     padding: 0px;
     margin-top: 0px;
+    cursor: pointer;
+
+    &:active,
+    &:hover,
+    &:focus {
+      outline: none;
+    }
   }
 
   textarea {
@@ -197,6 +229,12 @@ export const SettingsContainer = styled.section`
     border: none;
     margin-top: 10px;
     height: 200px;
+
+    &:active,
+    &:hover,
+    &:focus {
+      outline: 1px solid var(--color-accent-100);
+    }
   }
 `;
 
