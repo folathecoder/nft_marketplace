@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ProfileWallpaper from 'public/images/assets/profile/profile-head-bg.jpg';
 
 type Props = {
   imgURL?: any;
@@ -165,13 +164,12 @@ export const SettingsContainer = styled.section<Props>`
 
   @media screen and (min-width: 401px) {
     width: 400px;
-    /* width: 100vw; */
   }
 
   & > * {
     position: relative;
 
-    button {
+    .close_btn {
       position: absolute;
       top: 0;
       right: 0;
@@ -192,6 +190,10 @@ export const SettingsContainer = styled.section<Props>`
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+  }
+
+  .form_input-btn {
+    margin: 30px 0px 10px 0px;
   }
 
   input {

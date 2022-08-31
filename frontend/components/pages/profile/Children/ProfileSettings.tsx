@@ -4,20 +4,18 @@ import {
   SettingsContainer,
   Form,
 } from 'components/pages/profile/ProfileStyles';
+import { ActionButton } from 'components/global';
 
 const ProfileSettings = () => {
   const { toggleSettings, setToggleSettings } = useContext(ProfileContext);
 
-  const handleClickAway = () => {
-    if (toggleSettings === true) {
-      setToggleSettings(false);
-    }
-  };
-
   return (
     <SettingsContainer toggleSettings={toggleSettings}>
       <div>
-        <button onClick={() => setToggleSettings(!toggleSettings)}>
+        <button
+          onClick={() => setToggleSettings(!toggleSettings)}
+          className="close_btn"
+        >
           <i className="fa-solid fa-xmark"></i>
         </button>
         <Form>
@@ -55,6 +53,11 @@ const ProfileSettings = () => {
           <div className="form_input-container ">
             <label htmlFor="userTelegram">Telegram</label>
             <input type="text" name="userTelegram" id="userTelegram" />
+          </div>
+          <div className="form_input-btn">
+            <ActionButton handleClick={() => {}} iconClass="fa-solid fa-pen">
+              Update
+            </ActionButton>
           </div>
         </Form>
       </div>

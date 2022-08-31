@@ -1,18 +1,29 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
+import useOverflow from 'hooks/useOverflow';
 
 type Props = {
   children: JSX.Element;
 };
 
 interface AppProviderTypes {
-  // theme: boolean;
-  // setTheme: React.Dispatch<React.SetStateAction<boolean>>;
+  openWalletModal: boolean;
+  setOpenWalletModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const AppContext = createContext<AppProviderTypes | null>(null);
+export const AppContext = createContext<AppProviderTypes | any>(null);
 
 const AppProvider = ({ children }: Props) => {
-  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
+  const [openWalletModal, setOpenWalletModal] = useState(false);
+
+  useOverflow({
+    state: openWalletModal,
+  });
+
+  return (
+    <AppContext.Provider value={{ openWalletModal, setOpenWalletModal }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export default AppProvider;

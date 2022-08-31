@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AppContext } from 'context/AppContext';
 import {
   HeaderContainer,
   HeaderInner,
@@ -15,7 +16,7 @@ import images from 'public/images/assets';
 import { appMenu } from 'cms/global/appMenu';
 import { ActionButton, CustomToggle, SettingsMenu } from 'components/global';
 import MobileMenu from 'components/global/header/Children/mobile/MobileMenu/MobileMenu';
-import { Theme } from '@mui/system';
+import { WalletConnectModal } from 'components/plugins';
 
 type Props = {
   theme: boolean;
@@ -23,6 +24,7 @@ type Props = {
 };
 
 const Header = ({ theme, setTheme }: Props) => {
+  const { openWalletModal, setOpenWalletModal } = useContext(AppContext);
   const [settingsToggle, setSettingsToggle] = useState(false);
   const [connect, setConnect] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
@@ -128,7 +130,7 @@ const Header = ({ theme, setTheme }: Props) => {
                 </>
               ) : (
                 <ActionButton
-                  handleClick={() => setConnect(true)}
+                  handleClick={() => setOpenWalletModal(!openWalletModal)}
                   iconClass={'fa-regular fa-wallet'}
                 >
                   Connect
@@ -145,6 +147,7 @@ const Header = ({ theme, setTheme }: Props) => {
       </HeaderContainer>
 
       {openMobileMenu && <MobileMenu setOpenMobileMenu={setOpenMobileMenu} />}
+      {openWalletModal && <WalletConnectModal />}
     </>
   );
 };

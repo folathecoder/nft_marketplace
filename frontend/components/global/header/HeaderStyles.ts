@@ -9,10 +9,6 @@ export const HeaderContainer = styled.header`
   width: 100%;
   padding: var(--container-padding);
   border-bottom: 1px solid var(--color-dec-100);
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; */
   z-index: 1000;
   background-color: var(--color-bg-100);
 `;

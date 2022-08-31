@@ -17,7 +17,8 @@ const Button = styled.button`
 
   &:hover {
     transition: var(--transition);
-    background-color: var(--color-accent-400);
+    background-color: var(--color-accent-100);
+    color: var(--color-font-200);
   }
 
   span {
